@@ -18,7 +18,6 @@ ostream & operator<<(ostream & os,const Etudiant & etudiant)
     os<<"preference: <"<<etudiant.preference.first<<" , "<<etudiant.preference.second<<" >"<<endl;
     return os;
 }
-
 void Etudiant::setPreference() {
     int s;
         cout<<"saisir cotre preference:(une 1.'eventuelle option' ,2.'specialite' ou 3.'nom d'une futur ecole')"<<endl;
