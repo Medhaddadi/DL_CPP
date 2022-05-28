@@ -10,3 +10,10 @@ void Ecole::affichageEcole() {
     cout<<"le nombre max des etudiant admit     :"<<nbMAxEtudiant<<endl;
     cout<<"la moyenne minimal des etudiant admit:"<<moyeeneMin<<endl;
 }
+
+
+void Ecole::affectation(set_Etudiant<Etudiant> etudiants) {
+    for (int i = 0; i < etudiants.cardinal(); ++i) {
+        if(etudiants[i].getmoyenne()>)
+    }
+}

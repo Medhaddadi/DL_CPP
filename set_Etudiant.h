@@ -5,6 +5,8 @@
 #ifndef DL_EXAM_SET_ETUDIANT_H
 #define DL_EXAM_SET_ETUDIANT_H
 #include "Etudiant.h"
+#include "Ecole.h"
+#include <list>
 template<class T>
 class set_Etudiant ;
 template <class T>
@@ -23,7 +25,10 @@ public:
     void ajouterEt(const T &e);
     int cardinal(){return nbElem;};
     void setAffichage();
-     friend bool operator% <T>(const set_Etudiant<T>& e, const T &n);
+    void ListeTosetEt(list<Etudiant> l1 );
+    Etudiant operator[](int);
+    friend bool operator% <T>(const set_Etudiant<T>& e, const T &n);
+    //friend void affectation(set_Etudiant<Etudiant> section,Ecole& E);
     friend  void operator>><T>( const T &etudiant,set_Etudiant<T> &setEtudiant1 );
     friend ostream & operator<< <T>(ostream& os, set_Etudiant<T> &setEtudiant);
     ~set_Etudiant(){delete[]elemets;}
@@ -36,7 +41,19 @@ void set_Etudiant<T>::setAffichage() {
         cout<<elemets[i]<<endl;
     }
 }
+template<class T>
+Etudiant set_Etudiant<T>::operator[](int n) {
+    if(n>=0 && n<=max)
+      return elemets[n];
+}
+template<class T>
+void  set_Etudiant<T>::ListeTosetEt(list<Etudiant> l1) {
 
+    list<Etudiant>::iterator l;
+    for ( l = l1.begin(); l != l1.end(); ++l) {
+        ajouterEt(*l);
+    }
+}
 
 template<class T>
 void set_Etudiant<T>::ajouterEt( const T &etudiant) {

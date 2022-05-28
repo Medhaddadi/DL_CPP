@@ -23,6 +23,7 @@ public:
     bool operator==(const Etudiant & etudiant);
     void setPreference();
     void setMoyenne(float moy);
+    float getmoyenne(){return moyenne;}
     ~Etudiant(){};
 };
 Etudiant & EtudiantMoyMax(Etudiant *etudiant,int taille);

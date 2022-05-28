@@ -11,10 +11,12 @@ class Ecole {
   string ville;
   int nbMAxEtudiant;
  float  moyeeneMin;
- set_Etudiant<Etudiant> e;
+ set_Etudiant<Etudiant> section;
+ //friend void affectation(set_Etudiant<Etudiant> section,Ecole &E);
 public:
     Ecole(string nom="",string vill="",int nb=0,float moy=0.0):nomEcole(nom),ville(vill),nbMAxEtudiant(nb),moyeeneMin(moy){};
     void affichageEcole();//por afficher l'ecole
+    void affectation(set_Etudiant<Etudiant> etudiants);
     ~Ecole(){};
 };
 
